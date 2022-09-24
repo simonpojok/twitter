@@ -38,7 +38,7 @@ class LoginController: UIViewController {
     
     private let emailTextField: UITextField = {
         let tf = Utilities.textField(withPlaceHolder: "Email")
-        tf.autocorrectionType = .no
+        tf.autocapitalizationType = .none
         tf.keyboardType = .emailAddress
         return tf
     }()
@@ -46,6 +46,7 @@ class LoginController: UIViewController {
     private let passwordTextField: UITextField = {
         let tf = Utilities.textField(withPlaceHolder: "Password")
         tf.isSecureTextEntry = true
+        tf.autocapitalizationType = .none
         return tf
     }()
     
@@ -75,7 +76,23 @@ class LoginController: UIViewController {
     
     // MARK: - Selectors
     @objc func handleLogin() {
-        print("Handle Login")
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        
+        AuthService.shared.logUserIn(withEmail: email, password: password) {(result, error) in
+            if let error = error {
+                print("DEBUG: Error logging in \(error.localizedDescription)")
+                return
+            }
+    
+            guard let window = UIApplication.shared.windows.first(where: {$0.isKeyWindow}) else {
+                return
+            }
+            guard let tab = window.rootViewController as? MainTabController
+            else { return }
+            tab.authenticateUserAndConfigureUI()
+            self.dismiss(animated: true)
+        }
     }
     
     @objc func handleShowSignUp() {
