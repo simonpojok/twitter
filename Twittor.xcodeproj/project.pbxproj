@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A506F5CFBB7BE190B55FDBD /* Pods_Twittor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE70F97BCA61FB283D59FE8F /* Pods_Twittor.framework */; };
+		6E142FE028DF4F6700F1A3AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E142FDF28DF4F6700F1A3AF /* GoogleService-Info.plist */; };
 		6EA7DF1C28DDED7500EC09F0 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA7DF1B28DDED7500EC09F0 /* LoginController.swift */; };
 		6EA7DF1E28DDEE2D00EC09F0 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA7DF1D28DDEE2D00EC09F0 /* RegistrationController.swift */; };
 		6EBFA7BF28DE451200B8064E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBFA7BE28DE451200B8064E /* Utilities.swift */; };
@@ -25,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C3D7199F6A96B684AC4AA51 /* Pods-Twittor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twittor.debug.xcconfig"; path = "Target Support Files/Pods-Twittor/Pods-Twittor.debug.xcconfig"; sourceTree = "<group>"; };
+		4C7327A5E3281A9C293D3A72 /* Pods-Twittor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twittor.release.xcconfig"; path = "Target Support Files/Pods-Twittor/Pods-Twittor.release.xcconfig"; sourceTree = "<group>"; };
+		6E142FDF28DF4F6700F1A3AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6EA7DF1B28DDED7500EC09F0 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		6EA7DF1D28DDEE2D00EC09F0 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		6EBFA7BE28DE451200B8064E /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -42,6 +47,7 @@
 		6ED121F628DB3F0E00A499C9 /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
 		6ED121F828DB3F2700A499C9 /* ConversationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationController.swift; sourceTree = "<group>"; };
 		6EDA741428DCB28D004405B3 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		AE70F97BCA61FB283D59FE8F /* Pods_Twittor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Twittor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,12 +55,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A506F5CFBB7BE190B55FDBD /* Pods_Twittor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D1582E9A1BA50460DF7AB5F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE70F97BCA61FB283D59FE8F /* Pods_Twittor.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		51FBF3889D437A41571E8CBC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1C3D7199F6A96B684AC4AA51 /* Pods-Twittor.debug.xcconfig */,
+				4C7327A5E3281A9C293D3A72 /* Pods-Twittor.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		6EA7DF1A28DDED5300EC09F0 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -67,8 +92,11 @@
 		6ED121CA28DB3CDF00A499C9 = {
 			isa = PBXGroup;
 			children = (
+				6E142FDF28DF4F6700F1A3AF /* GoogleService-Info.plist */,
 				6ED121D528DB3CDF00A499C9 /* Twittor */,
 				6ED121D428DB3CDF00A499C9 /* Products */,
+				51FBF3889D437A41571E8CBC /* Pods */,
+				0D1582E9A1BA50460DF7AB5F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,9 +185,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6ED121E728DB3CE100A499C9 /* Build configuration list for PBXNativeTarget "Twittor" */;
 			buildPhases = (
+				1965C2FB05D6458212C1B779 /* [CP] Check Pods Manifest.lock */,
 				6ED121CF28DB3CDF00A499C9 /* Sources */,
 				6ED121D028DB3CDF00A499C9 /* Frameworks */,
 				6ED121D128DB3CDF00A499C9 /* Resources */,
+				17B39F94D3F717E05BFB74CE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -186,7 +216,7 @@
 				};
 			};
 			buildConfigurationList = 6ED121CE28DB3CDF00A499C9 /* Build configuration list for PBXProject "Twittor" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -209,12 +239,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				6ED121E328DB3CE100A499C9 /* LaunchScreen.storyboard in Resources */,
+				6E142FE028DF4F6700F1A3AF /* GoogleService-Info.plist in Resources */,
 				6ED121E028DB3CE100A499C9 /* Assets.xcassets in Resources */,
 				6ED121DE28DB3CDF00A499C9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		17B39F94D3F717E05BFB74CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Twittor/Pods-Twittor-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Twittor/Pods-Twittor-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Twittor/Pods-Twittor-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1965C2FB05D6458212C1B779 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Twittor-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6ED121CF28DB3CDF00A499C9 /* Sources */ = {
@@ -374,6 +447,7 @@
 		};
 		6ED121E828DB3CE100A499C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C3D7199F6A96B684AC4AA51 /* Pods-Twittor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -402,6 +476,7 @@
 		};
 		6ED121E928DB3CE100A499C9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C7327A5E3281A9C293D3A72 /* Pods-Twittor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
