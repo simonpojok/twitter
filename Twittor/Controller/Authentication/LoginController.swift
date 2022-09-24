@@ -62,7 +62,7 @@ class LoginController: UIViewController {
     }()
     
     private lazy var dontHaveAccountButton: UIButton = {
-        let button = Utilities.attributedButton("Don't have an account", "Sign Up")
+        let button = Utilities.attributedButton("Don't have an account?", "\tSign Up")
         button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
         return button
     }()
@@ -79,13 +79,14 @@ class LoginController: UIViewController {
     }
     
     @objc func handleShowSignUp() {
-        
+        let controller = RegistrationController()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     // MARK: - Helpers
     func configureUI() {
         view.backgroundColor = .twitterBlue
-//        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.barStyle = .black
         
         view.addSubview(logoImageView)
@@ -113,6 +114,15 @@ class LoginController: UIViewController {
             right: view.rightAnchor,
             paddingLeft: 16,
             paddingRight: 16
+        )
+        
+        view.addSubview(dontHaveAccountButton)
+        dontHaveAccountButton.anchor(
+            left: view.leftAnchor,
+            bottom: view.safeAreaLayoutGuide.bottomAnchor,
+            right: view.rightAnchor,
+            paddingLeft: 40,
+            paddingRight: 40
         )
     }
 }

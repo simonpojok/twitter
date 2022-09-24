@@ -73,6 +73,8 @@ class Utilities {
             string: secondPart,
             attributes: [.font: UIFont.systemFont(ofSize: 16), .foregroundColor: UIColor.white]
         ))
+        
+        button.setAttributedTitle(attributedTitle, for: .normal)
         return button
     }
 }
